@@ -180,6 +180,10 @@ height: 100vh;
     margin-bottom: 1rem;
 }
 
+.inptborder {
+    border: 1px solid #8f9292;
+}
+
 .form-group.required label::after {
     content: "*";
     color: #d04c4c; 
