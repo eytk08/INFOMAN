@@ -31,41 +31,158 @@
         </div>
       </nav>
   
-
     <div id="form-page" class="container mt-5 hidden">
         <div class="row justify-content-center">
             <div class="col-md-8 form-container">
                 <h2 class="text-center">Medical History Form</h2>
                 <form id="medical-history-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" required>
+                    
+                    <!-- Personal Details Section -->
+                    <h4 class="mt-4">Personal Details</h4>
+                    <div class="form-group required ">
+                        <label for="patientName">Full Name</label>
+                        <input type="text" class="form-control inptborder" id="patientName" required>
                     </div>
+                    <div class="form-group required">
+			<div class="d-flex align-items-end">
+			     <div style="flex: 1;">
+				  <label for="patientBday">Birthday</label>
+				  <input type="date" class="form-control inptborder" id="patientBday" required>
+			     </div>
+			     <div style="flex: 1; margin-left: 10px;">
+				  <label for="patientAge">Age</label>
+				  <input type="number" class="form-control inptborder" id="patientAge" required>
+			     </div>
+			     <div style="flex: 1; margin-left: 10px;">
+				  <label for="patientSex">Sex</label>
+				  <select class="form-control inptborder" id="patientSex" required>
+					<option value="" disabled selected>Select</option>
+					<option value="M">Male</option>
+					<option value="F">Female</option>
+				  </select>
+			     </div>
+			</div>
+		    </div>
+                    <div class="form-group required">
+			<div class="d-flex align-items-end">
+			     <div style="flex: 1;">
+				 <label for="patientRel">Religion</label>
+				 <input type="text" class="form-control inptborder" id="patientRel" required>
+			     </div>
+			     <div style="flex: 1; margin-left: 10px;">
+				 <label for="patientMarStat">Marital Status</label>
+				 <select class="form-control inptborder" id="patientMarStat" required>
+					 <option value="" disabled selected>Select</option>
+					 <option value="divorced">Divorced</option>
+					 <option value="married">Married</option>
+					 <option value="separated">Separated</option>
+					 <option value="single">Single</option>
+					 <option value="widowed">Widowed</option>
+				 </select>
+			     </div>
+			     <div style="flex: 1; margin-left: 10px;">
+				 <label for="patientOccup">Occupation</label>
+				 <input type="text" class="form-control inptborder" id="patientOccup" required>
+			     </div>
+			 </div>
+		    </div>
+                    <div class="form-group required">
+			 <div class="d-flex align-items-end">
+			      <div style="flex: 1;">
+				   <label for="patientPNum">Phone Number</label>
+				   <input type="tel" class="form-control inptborder" id="patientPNum" required>
+			      </div>
+			      <div style="flex: 1; margin-left: 10px;">
+				   <label for="patientEmail">Email Address</label>
+				   <input type="email" class="form-control inptborder" id="patientEmail" placeholder="example@domain.com" required>
+			      </div>
+			 </div>
+		    </div>
+                    
+                    <!-- Medical Details Section -->
+                    <h4 class="mt-4">Medical Details</h4>
+		    <div class="form-group required">
+			 <div class="d-flex align-items-end">
+			      <div style="flex: 1;">
+				   <label for="patientBType">Blood Type</label>
+				   <input type="text" class="form-control inptborder" id="patientBType">
+			      </div>
+			      <div style="flex: 1; margin-left: 10px;">
+				   <label for="patientHeight">Height</label>
+				   <input type="number" step="0.01" class="form-control inptborder" id="patientHeight" required>
+			      </div>
+			      <div style="flex: 1; margin-left: 10px;">
+				   <label for="patientWeight">Weight</label>
+				   <input type="number" step="0.01" class="form-control inptborder" id="patientWeight" required>
+			      </div>
+			 </div>
+		    </div>
                     <div class="form-group">
-                        <label for="age">Age</label>
-                        <input type="number" class="form-control" id="age" required>
+                        <label for="doctorPDoc">PCP's Name </label>
+                        <input type="text" class="form-control inptborder" id="doctorPDoc">
                     </div>
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <select class="form-control" id="gender" required>
-                            <option value="">Select</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
+		    <div class="form-group">
+			 <div class="d-flex align-items-end">
+			      <div style="flex: 1;">
+				   <label for="doctorPNum">PCP's Phone Number </label>
+				   <input type="tel" class="form-control inptborder" id="doctorPNum">
+			      </div>
+			      <div style="flex: 1; margin-left: 10px;">
+				   <label for="doctorPEmail">PCP's Email Address </label>
+			      <input type="email" class="form-control inptborder" id="doctorPEmail" placeholder="example@domain.com">
+			      </div>
+			 </div>
+		    </div>
+                    <div id="conditions-container">
+                        <h4 class="mt-4">Medical Conditions</h4>
+                        <div class="condition-item form-group">
+                            <label for="conditionName">Condition Name</label>
+                            <input type="text" class="form-control inptborder" name="conditionName[]">
+                            <label for="diagnoseDate">Date of Diagnose</label>
+                            <input type="date" class="form-control inptborder" name="diagnoseDate[]">
+                            <button type="button" class="btn btn-danger btn-sm delete-condition">Delete</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="medical-conditions">Do you have any pre-existing medical conditions?</label>
-                        <textarea class="form-control" id="medical-conditions" rows="4" required></textarea>
+                    <button type="button" id="add-condition" class="btn btn-outline-primary mt-3">Add Another Condition</button>
+                    
+                    <div class="form-group mt-4">
+                        <label for="conditionMed">List all the medications you have taken for your conditions.</label>
+                        <input type="text" class="form-control inptborder" id="conditionMed">
                     </div>
-                    <div class="form-group">
-                        <label for="medications">Are you currently taking any medications?</label>
-                        <textarea class="form-control" id="medications" rows="4" required></textarea>
+                    <div class="form-group mt-4">
+                        <label for="allergenName">List your allergies.</label>
+                        <input type="text" class="form-control inptborder" id="allergenName">
                     </div>
-                    <div class="form-group">
-                        <label for="allergies">Do you have any allergies?</label>
-                        <textarea class="form-control" id="allergies" rows="4" required></textarea>
+					<div class="form-group mt-4">
+                        <label for="conditionMed">List all the medications you have taken for your allergies.</label>
+                        <input type="text" class="form-control inptborder" id="allergenMed">
                     </div>
-                    <button type="submit" id="submit-button" class="btn btn-custom btn-block">Submit</button>
+			
+		    <!-- Surgery Details Section -->
+		    <h4 class="mt-4">Surgery Details</h4>
+			 <div id="surgery-container">
+			      <div class="surgery-item form-group">
+				   <label for="surgeryName">Surgery Name</label>
+				   <input type="text" class="form-control inptborder" name="surgeryName[]">
+			           <div class="d-flex align-items-end">
+				   <div style="flex: 1;">
+			      	        <label for="surgeryLoc">Surgery Location</label>
+			                <input type="text" class="form-control inptborder" name="surgeryLoc[]">
+				   </div>
+				   <div style="flex: 1; margin-left: 10px;">
+					<label for="surgeryType">Type</label>
+			           	<input type="text" class="form-control inptborder" name="surgeryType[]">
+			     	   </div>
+			     	   <div style="flex: 1; margin-left: 10px;">
+			           	<label for="surgeryYear">Year Conducted</label>
+			           	<input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
+			     	   </div>
+			     	   <button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+			           </div>
+			      </div>
+			 </div>
+			 <button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>		
+                   	 <button type="submit" id="submit-button" class="btn btn-solid btn-block">Submit</button>
                 </form>
                 <div id="form-result" class="mt-4"></div>
             </div>
@@ -82,7 +199,7 @@
             </div>
         </div>
     </section>
-    
+	
     <!--FOOTER-->
     <section id="footer" class="foot">
         <div class="container">
@@ -91,31 +208,16 @@
             <div  class="footer-logo">
               <img src="assets\images\logo mini.png" alt="footer-logo">
             </div>
-            <p class="text-center">© 2024 INFOMAN BRAGAIS GARCIA PAGUIO SANAO try 4</p>
+            <p class="text-center">© 2024 INFOMAN BRAGAIS GARCIA PAGUIO SANAO</p>
           </footer>
         </div>
     </section>
-    
+	
+     <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+	
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- for go to top function -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-        $(document).ready(function() {
-            var backToTop = $('#back2Top');
-            $(window).scroll(function() {
-                if ($(window).scrollTop() > 300) {
-                    backToTop.fadeIn();
-                } else {
-                    backToTop.fadeOut();
-                }
-            });
-            backToTop.click(function(e) {
-                e.preventDefault();
-                $('html, body').animate({scrollTop: 0}, 600);
-                return false;
-            });
-        });
-    </script>
+    <script src="assets/js/websitejs.js"></script>
 </body>
 </html>
 
