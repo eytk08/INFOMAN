@@ -266,6 +266,32 @@ height: 100vh;
     background-color: #e64040; 
 }
 
+/*preview form*/
+#preview-container {
+    display: none;
+    margin-top: 30px; 
+}
+
+
+#preview-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.preview-item {
+    margin-bottom: 10px;
+}
+
+
+.preview-label {
+    font-weight: bold;
+}
+
+.preview-content {
+    margin-left: 10px; 
+}
+
   /*FOOTER*/
 #footer {
     background-color: var(--c-dark); 
