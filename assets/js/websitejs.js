@@ -78,6 +78,7 @@ document.querySelectorAll('.delete-surgery').forEach(addDeleteEvent);
     });
 });
 
+/*PREVIEW*/
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('medical-history-form');
     const previewContainer = document.getElementById('preview-container');
