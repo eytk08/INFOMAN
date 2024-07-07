@@ -173,7 +173,7 @@ h5 {
 
 #Login {
     height: 100vh;
-    background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) url('https://static.vecteezy.com/system/resources/thumbnails/021/599/814/small/healthcare-heart-shape-with-green-cardio-pulse-heartbeat-lone-medical-abstract-background-modern-simple-design-icon-sign-or-logo-design-vector.jpg') no-repeat center/cover;
+    background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) ;
 }
 
 .wrap {
