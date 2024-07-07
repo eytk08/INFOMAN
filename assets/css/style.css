@@ -334,7 +334,7 @@ height: 100vh;
 .accordion-body {
     padding: 1rem;
     font-size: 1rem;
-    color: var(--c-body);
+    color: var(--c-grey);
     font-family: var(--font-base);
 }
 
