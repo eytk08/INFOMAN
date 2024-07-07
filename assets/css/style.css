@@ -7,6 +7,7 @@
     --c-brand-light: #40afaf;
     --c-brand-rgb: 78, 87, 212;
     --c-body: #727272;
+    --c-white: #f1f1f1;
     --font-base: "Plein-Variable", sans-serif;
     --box-shadow: 0px 15px 25px rgba( 0, 0, 0, 0, 0.8);
     --transition: all 0.5s ease;
@@ -22,6 +23,7 @@ body{
 h1 h2 h3
 .h1 .h2 .h3 .h4 .h5 .h6{
     font-weight: 900;
+
 }
 
 
@@ -52,7 +54,7 @@ img{
 }
 .navbar-nav .nav-link{
     font-weight: 500;
-    color: white;
+    color: var(--c-white);
 }
 
 .navbar-nav .nav-link.active{
@@ -73,19 +75,19 @@ img{
     font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
-    border-radius: 0 ;
+    border-radius: 10px ;
     padding: 10px 24px ;
 }
 
 .btn-brand{
     background-color: var(--c-brand);
-    color: white ;
+    color: var(--c-white) ;
 }
 
 .btn-brand:hover{
     background-color: var(--c-brand-light);
     border-color: var(--c-brand-light);
-    color: white;
+    color: var(--c-white);
 
 }
 
@@ -97,7 +99,7 @@ img{
 
 .btn-solid {
     background-color: #258a8a; 
-    color: white;
+    color: var(--c-white);
     border: none;
 }
 
@@ -167,6 +169,40 @@ h5 {
     background-size: cover;
     color: #ffffff;
 }
+
+#Login {
+    background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) url('https://static.vecteezy.com/system/resources/thumbnails/021/599/814/small/healthcare-heart-shape-with-green-cardio-pulse-heartbeat-lone-medical-abstract-background-modern-simple-design-icon-sign-or-logo-design-vector.jpg') no-repeat center/cover;
+}
+
+.form{
+    width: 10%;
+    background-color: var(--c-white);
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 150px;
+}
+
+.form-label {
+    color: var(--c-white); 
+    font-family: var(--font-base); 
+    font-size: 1rem; 
+}
+
+.form-control {
+    background-color: var(--c-white); 
+    border: 1px solid var(--c-body); 
+    border-radius: 0.25rem; 
+    color: var(--c-dark); 
+    font-family: var(--font-base); 
+    transition: border-color var(--transition), box-shadow var(--transition);
+    height: 40px; 
+}
+
+.form-control:focus {
+    border-color: var(--c-brand); 
+    box-shadow: 0 0 0 0.25rem rgba(var(--c-brand-rgb), 0.25); 
+}
+
 
 .guide-section {
 height: 100vh;
