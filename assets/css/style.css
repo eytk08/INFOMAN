@@ -342,13 +342,13 @@ height: 100vh;
     color: var(--c-brand);
 }
 
-/*FORM PAGE*/
-.form-group {
-    margin-bottom: 1rem;
+/*INPUT FORM PAGE*/
+.form-container {
+    padding-bottom: 100px; 
 }
 
-.inptborder {
-    border: 1px solid #8f9292;
+.form-group {
+    margin-bottom: 1rem;
 }
 
 .form-group.required label::after {
@@ -357,25 +357,38 @@ height: 100vh;
     margin-left: 2px; 
 }
 
-.condition-item, .surgery-item {
+.inptborder {
+    border: 1px solid #5a5a5a;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: #8f9292;
+}
+
+
+select.form-control {
+    color: #8f9292; 
+}
+
+.condition-item, .surgery-item, .allergy-item {
     position: relative;
 }
 
-#add-condition, #add-surgery {
+#add-condition, #add-surgery, #add-allergy {
     display: block;
     background-color: #ffffff; 
     color: #1a6262; 
     border-color: #1a6262; 
 }
-#add-condition:hover, #add-surgery:hover {
+#add-condition:hover, #add-surgery:hover, #add-allergy:hover {
     background-color: #134141; 
     color: #fff; 
     border-color: #134141; 
 }
 
-.delete-condition, .delete-surgery {
+.delete-condition, .delete-surgery, .delete-allergy {
     position: absolute;
-    right: 1vh; 
+    right: 0vh; 
     top: 2vh;
     transform: translateY(-50%);
     background-color: #1a6262; 
@@ -383,7 +396,7 @@ height: 100vh;
     border: none;
 }
 
-.delete-condition:hover, .delete-surgery:hover {
+.delete-condition:hover, .delete-surgery:hover, .add-allergy {
     background-color: #e64040; 
 }
 
