@@ -151,14 +151,14 @@ nav .fas{
 
 .main-forms .card h2{
     margin: 10px;
-    font-size: 3VH;
+    font-size: 3vh;
 
 }
 
 .main-forms .card h1{
     margin: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 3vh;
+    font-size: 4vh;
 
 }
 .main-forms .card i{
@@ -182,11 +182,11 @@ nav .fas{
 
 }
 
-.conditions{
+.conditions, .allergies, .surgeries{
     margin-top: 20px;
     text-align: center;
 }
-.conditions-box{
+.conditions-box, .allergies-box, .surgeries-box{
     width: 100%;
     padding: 10px;
     padding-bottom: 30px;
@@ -194,6 +194,7 @@ nav .fas{
     background: var(--c-white);
     border-radius: 10px;
 }
+
 table{
     padding: 10px;
 }
@@ -208,9 +209,33 @@ th, td{
     margin-bottom: 50px; 
 }
 
-.conditions .conditions-box  .condittions-table{
+.conditions .conditions-box  .condittions-table, .allergies .allergies-box .allergies-table, .surgeries .surgeries-box .surgeries-table {
     flex: 2;
     margin: 0 25px;
     display: flex;
     flex-direction: column;
+}
+
+.main .content-2{
+    min-height:  auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.main .content-2 .conditions{
+    min-height: auto;
+    flex: 5;
+    margin: 0 25px 25px 25px;
+}
+
+.main .content-2 .allergies{
+    flex: 2;
+    min-height: auto;
+    margin: 0 25px;
+}
+
+.content-2 h1{
+    padding-top: 30px;
 }
