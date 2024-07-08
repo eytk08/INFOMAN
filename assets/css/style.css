@@ -176,30 +176,30 @@ h5 {
     background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) ;
 }
 
-.wrap {
+#Login.wrap {
     background:var(--c-white);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
 }
 
-.text-wrap {
+#Login.text-wrap {
     background: var(--c-dark);
     color:var(--c-white);
     padding: 20px;
     border-radius: 10px 10px 0 0;
 }
-.text-wrap p {
+#Login.text-wrap p {
     margin-bottom: 20px;
 }
 
-.login-wrap {
+#Login.login-wrap {
     padding: 80px;
     max-width: 60%;
     
 }
 
-.login-wrap h3 {
+#Login.login-wrap h3 {
     color: var(--c-darke); 
     font-family: var(--font-base); 
     text-align: center;
@@ -207,7 +207,7 @@ h5 {
 
 }
 
-.form-control {
+#Login.form-control {
     background-color: var(--c-grey); 
     border-radius: 20px; 
     color: var(--c-dark); 
@@ -217,45 +217,45 @@ h5 {
 
 }
 
-.form-control:focus {
+#Login.form-control:focus {
     box-shadow: 0 0 8px rgb(65, 209, 178);
 }
 
-.form-group {
+#Login .form-group {
     margin-bottom: 20px;
 }
 
-.submit {
+#Login .submit {
     background: var(--c-brand);
     color: var(--c-white);
     border: none;
 }
 
-.submit:hover {
+#Login .submit:hover {
     background: var(--c-brand-light);
 }
-.text {
+#Login .text {
     width: 100%;
     text-align: center;
     padding: 20px;
     color: var(--c-brand-light);
 }
 
-.text h2 {
+#Login.text h2 {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--c-brand-light);
 }
 
-.text p {
+#Login.text p {
     margin-bottom: 20px;
     color: var(--c-brand);
 }
-.text a.btn-white{
+#Login.text a.btn-white{
     background: var(--c-brand-light);
 }
-.text a.btn {
+#Login.text a.btn {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px;
@@ -266,21 +266,21 @@ h5 {
 }
 
 
-.text a.btn.btn-outline-white:hover {
+#Login.text a.btn.btn-outline-white:hover {
     background: var(--c-white);
     color: var(--c-dark);
 }
 
 
-.input-icon {
+#Login.input-icon {
     position: relative;
 }
 
-.input-icon input {
+#Login.input-icon input {
     padding-left: 30px; 
 }
 
-.input-icon i {
+#Login.input-icon i {
     position: absolute;
     left: 10px;
     top: 50%;
