@@ -24,7 +24,7 @@
                 <a class="nav-link" href="home.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#guide">Guide</a>
+                <a class="nav-link" href="#Login">Log in</a>
               </li>
             </ul>
           </div>
@@ -94,7 +94,7 @@
 			      </div>
 			      <div style="flex: 1; margin-left: 10px;">
 				   <label for="patientEmail">Email Address</label>
-				   <input type="email" class="form-control inptborder" id="patientEmail" placeholder="example@domain.com" required>
+				   <input type="email" class="form-control inptborder" id="patientEmail" placeholder="example@gmail.com" required>
 			      </div>
 			 </div>
 		    </div>
@@ -109,7 +109,17 @@
 			      </div>
 			      <div style="flex: 1; margin-left: 10px;">
 				   <label for="patientHeight">Height</label>
-				   <input type="number" step="0.01" class="form-control inptborder" id="patientHeight" required>
+				   <select class="form-control inptborder" id="patientBType" required>
+					<option value="" disabled selected>Select</option>
+					<option value="O-">O-</option>
+					<option value="O+">O+</option>
+					<option value="A-">A-</option>
+					<option value="A+">A+</option>
+					<option value="B-">B-</option>
+					<option value="B+">B+</option>
+					<option value="AB-">AB-</option>
+					<option value="AB+">AB+</option>
+				   </select>
 			      </div>
 			      <div style="flex: 1; margin-left: 10px;">
 				   <label for="patientWeight">Weight</label>
@@ -136,59 +146,64 @@
                     <div id="conditions-container">
                         <h4 class="mt-4">Medical Conditions</h4>
                         <div class="condition-item form-group">
-                            <label for="conditionName">Condition Name</label>
+                                                        <label for="conditionName">Condition Name</label>
                             <input type="text" class="form-control inptborder" name="conditionName[]">
                             <label for="diagnoseDate">Date of Diagnose</label>
                             <input type="date" class="form-control inptborder" name="diagnoseDate[]">
+							<label for="conditionMed">Medicine</label>
+                            <input type="text" class="form-control inptborder" name="med[]">
                             <button type="button" class="btn btn-danger btn-sm delete-condition">Delete</button>
                         </div>
                     </div>
                     <button type="button" id="add-condition" class="btn btn-outline-primary mt-3">Add Another Condition</button>
-                    
-                    <div class="form-group mt-4">
-                        <label for="conditionMed">List all the medications you have taken for your conditions.</label>
-                        <input type="text" class="form-control inptborder" id="conditionMed">
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="allergenName">List your allergies.</label>
-                        <input type="text" class="form-control inptborder" id="allergenName">
-                    </div>
-					<div class="form-group mt-4">
-                        <label for="conditionMed">List all the medications you have taken for your allergies.</label>
-                        <input type="text" class="form-control inptborder" id="allergenMed">
-                    </div>
-			
+					
+		    <!-- Allergy Details Section -->
+		    <div id="allergy-container">
+			<h4 class="mt-4">Allergy Conditions</h4>
+			<div class="allergy-item form-group">
+				<label for="allergenName">Allergy Name</label>
+                            	<input type="text" class="form-control inptborder" name="allergenName[]">
+                            	<label for="diagnoseDate">Date of Diagnose</label>
+                            	<input type="date" class="form-control inptborder" name="allergenDiagnoseDate[]">
+				<label for="allergyMed">Medicine</label>
+                            	<input type="text" class="form-control inptborder" name="allergyMed[]">
+                           	 <button type="button" class="btn btn-danger btn-sm delete-allergy">Delete</button>
+			</div>
+		    </div>
+                    <button type="button" id="add-allergy" class="btn btn-outline-primary mt-3">Add Another Allergy</button>
+
 		    <!-- Surgery Details Section -->
-		    <h4 class="mt-4">Surgery Details</h4>
-			 <div id="surgery-container">
-			      <div class="surgery-item form-group">
-				   <label for="surgeryName">Surgery Name</label>
-				   <input type="text" class="form-control inptborder" name="surgeryName[]">
-			           <div class="d-flex align-items-end">
-				   <div style="flex: 1;">
-			      	        <label for="surgeryLoc">Surgery Location</label>
-			                <input type="text" class="form-control inptborder" name="surgeryLoc[]">
-				   </div>
-				   <div style="flex: 1; margin-left: 10px;">
-					<label for="surgeryType">Type</label>
-			           	<input type="text" class="form-control inptborder" name="surgeryType[]">
-			     	   </div>
-			     	   <div style="flex: 1; margin-left: 10px;">
-			           	<label for="surgeryYear">Year Conducted</label>
-			           	<input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
-			     	   </div>
-			     	   <button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
-			           </div>
-			      </div>
-			 </div>
-			 <button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>		
-                   	 <button type="submit" id="submit-button" class="btn btn-solid btn-block">Submit</button>
+		    <div id="surgery-container">
+			<h4 class="mt-4">Surgery Details</h4>
+			<div class="surgery-item form-group">
+				<label for="surgeryName">Surgery Name</label>
+				<input type="text" class="form-control inptborder" name="surgeryName[]">
+				<div class="d-flex align-items-end">
+					<div style="flex: 1;">
+						<label for="surgeryLoc">Surgery Location</label>
+						<input type="text" class="form-control inptborder" name="surgeryLoc[]">
+					</div>
+					<div style="flex: 1; margin-left: 10px;">
+						<label for="surgeryType">Type</label>
+						<input type="text" class="form-control inptborder" name="surgeryType[]">
+					</div>
+					<div style="flex: 1; margin-left: 10px;">
+						<label for="surgeryYear">Year Conducted</label>
+						<input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
+					</div>
+					<button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+				</div>
+			</div>
+		    </div>
+		    <button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>
+					
+                    <button type="submit" id="submit-button" class="btn btn-solid btn-block">Submit</button>
                 </form>
                 <div id="form-result" class="mt-4"></div>
             </div>
         </div>
     </div>
-
+	
 <!-- Preview Section -->
 <div id="preview-container" class="container mt-5 hidden">
     <div class="row justify-content-center">
@@ -235,17 +250,6 @@
         </div>
     </div>
 </div>
-
-    <!-- Guide Section -->
-    <section id="guide" class="guide-section" style="user-select: none;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Guide</h1>
-                </div>
-            </div>
-        </div>
-    </section>
 	
     <!--FOOTER-->
     <section id="footer" class="foot">
