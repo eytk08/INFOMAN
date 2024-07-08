@@ -179,5 +179,38 @@ nav .fas{
     margin-top: 10px;
     background: var(--c-white);
     border-radius: 10px;
-    
+
+}
+
+.conditions{
+    margin-top: 20px;
+    text-align: center;
+}
+.conditions-box{
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    background: var(--c-white);
+    border-radius: 10px;
+}
+table{
+    padding: 10px;
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+}
+
+.conditions-box .btn-add{
+    margin: 30px;
+    margin-bottom: 50px; 
+}
+
+.conditions .conditions-box  .condittions-table{
+    flex: 2;
+    margin: 0 25px;
+    display: flex;
+    flex-direction: column;
 }
