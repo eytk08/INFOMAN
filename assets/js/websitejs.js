@@ -1,66 +1,94 @@
 $(document).ready(function() {
-// add and delete items in condition
-	document.getElementById('add-condition').addEventListener('click', function() {
-    	const container = document.getElementById('conditions-container');
-    	const newCondition = document.createElement('div');
-        newCondition.classList.add('condition-item', 'form-group');
-        newCondition.innerHTML = `
-            <label for="conditionName">Condition Name</label>
-            <input type="text" class="form-control" name="conditionName[]">
-            <label for="diagnoseDate">Date of Diagnose</label>
-            <input type="date" class="form-control" name="diagnoseDate[]">
-            <button type="button" class="btn btn-danger btn-sm delete-condition">Delete</button>`;
-    container.appendChild(newCondition);
-    addDeleteEvent(newCondition.querySelector('.delete-condition'));
-});
-
-function addDeleteEvent(button) {
-    button.addEventListener('click', function() {
-        const conditionItem = button.closest('.condition-item');
-        conditionItem.remove();
+    // Add and delete items in condition
+    $('#add-condition').on('click', function() {
+        const container = $('#conditions-container');
+        const newCondition = $(`
+            <div class="condition-item form-group">
+                <label for="conditionName">Condition Name</label>
+                <input type="text" class="form-control inptborder" name="conditionName[]">
+                <label for="diagnoseDate">Date of Diagnose</label>
+                <input type="date" class="form-control inptborder" name="diagnoseDate[]">
+                <label for="med">Medicine</label>
+                <input type="text" class="form-control inptborder" name="med[]">
+                <button type="button" class="btn btn-danger btn-sm delete-condition">Delete</button>
+            </div>`);
+        container.append(newCondition);
+        addDeleteConditionEvent(newCondition.find('.delete-condition'));
     });
-}
 
-document.querySelectorAll('.delete-condition').forEach(addDeleteEvent);
+    function addDeleteConditionEvent(button) {
+        button.on('click', function() {
+            $(this).closest('.condition-item').remove();
+        });
+    }
 
-// add and delete items in surgery
-document.getElementById('add-surgery').addEventListener('click', function() {
-    const container = document.getElementById('surgery-container');
-    const newSurgery = document.createElement('div');
-    newSurgery.classList.add('surgery-item', 'form-group');
-    newSurgery.innerHTML = `
-        <label for="surgeryName">Surgery Name</label>
-        <input type="text" class="form-control" name="surgeryName[]">
-        <div class="d-flex align-items-end">
-            <div style="flex: 1;">
-                <label for="surgeryLoc">Surgery Location</label>
-                <input type="text" class="form-control" name="surgeryLoc[]">
-            </div>
-            <div style="flex: 1; margin-left: 10px;">
-                <label for="surgeryType">Type</label>
-                <input type="text" class="form-control" name="surgeryType[]">
-            </div>
-            <div style="flex: 1; margin-left: 10px;">
-                <label for="surgeryYear">Year Conducted</label>
-                <input type="number" class="form-control" name="surgeryYear[]" min="1900" max="2100">
-            </div>
-            <button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
-        </div>
-    `;
-    container.appendChild(newSurgery);
-    addDeleteEvent(newSurgery.querySelector('.delete-surgery'));
-});
-
-function addDeleteEvent(button) {
-    button.addEventListener('click', function() {
-        const surgeryItem = button.closest('.surgery-item');
-        surgeryItem.remove();
+    $('.delete-condition').each(function() {
+        addDeleteConditionEvent($(this));
     });
-}
 
-// Add delete event to initial surgery item
-document.querySelectorAll('.delete-surgery').forEach(addDeleteEvent);
+    // Add and delete items in allergy
+    $('#add-allergy').on('click', function() {
+        const container = $('#allergy-container');
+        const newAllergy = $(`
+            <div class="allergy-item form-group">
+                <label for="allergenName">Allergy Name</label>
+                <input type="text" class="form-control inptborder" name="allergenName[]">
+                <label for="diagnoseDate">Date of Diagnose</label>
+                <input type="date" class="form-control inptborder" name="allergenDiagnoseDate[]">
+                <label for="med">Medicine</label>
+                <input type="text" class="form-control inptborder" name="allergyMed[]">
+                <button type="button" class="btn btn-danger btn-sm delete-allergy">Delete</button>
+            </div>`);
+        container.append(newAllergy);
+        addDeleteAllergyEvent(newAllergy.find('.delete-allergy'));
+    });
 
+    function addDeleteAllergyEvent(button) {
+        button.on('click', function() {
+            $(this).closest('.allergy-item').remove();
+        });
+    }
+
+    $('.delete-allergy').each(function() {
+        addDeleteAllergyEvent($(this));
+    });
+
+    // Add and delete items in surgery
+    $('#add-surgery').on('click', function() {
+        const container = $('#surgery-container');
+        const newSurgery = $(`
+            <div class="surgery-item form-group">
+                <label for="surgeryName">Surgery Name</label>
+                <input type="text" class="form-control inptborder" name="surgeryName[]">
+                <div class="d-flex align-items-end">
+                    <div style="flex: 1;">
+                        <label for="surgeryLoc">Surgery Location</label>
+                        <input type="text" class="form-control inptborder" name="surgeryLoc[]">
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="surgeryType">Type</label>
+                        <input type="text" class="form-control inptborder" name="surgeryType[]">
+                    </div>
+                    <div style="flex: 1; margin-left: 10px;">
+                        <label for="surgeryYear">Year Conducted</label>
+                        <input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
+                    </div>
+                    <button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+                </div>
+            </div>`);
+        container.append(newSurgery);
+        addDeleteSurgeryEvent(newSurgery.find('.delete-surgery'));
+    });
+
+    function addDeleteSurgeryEvent(button) {
+        button.on('click', function() {
+            $(this).closest('.surgery-item').remove();
+        });
+    }
+
+    $('.delete-surgery').each(function() {
+        addDeleteSurgeryEvent($(this));
+    });
 
 // back2top
     var backToTop = $('#back2Top');
