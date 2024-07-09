@@ -80,7 +80,7 @@ nav{
     position: relative;
     top: 0;
     bottom: 0;
-    height: 100vh;
+    height: auto;
     left: 0;
     background: var(--c-dark) ;
     width: 280px;
@@ -238,4 +238,8 @@ th, td{
 
 .content-2 h1{
     padding-top: 30px;
+}
+
+.hidden {
+    display: none;
 }
