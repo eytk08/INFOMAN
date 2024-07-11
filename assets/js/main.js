@@ -17,21 +17,6 @@ function enablePersonalInputs() {
     });
 }
 
-// Function to ask for current password for account information
-function askForCurrentPassword() {
-    const currentPassword = prompt('Please enter your current password:');
-    if (currentPassword) {
-        // Simulate checking current password (replace with actual validation)
-        const currentPasswordFromDatabase = "abc123"; // Replace with actual password fetched from database
-        if (currentPassword === currentPasswordFromDatabase) {
-            enableAccountEdit();
-        } else {
-            alert('Incorrect password. Please try again.');
-        }
-    } else {
-        alert('Current password is required to edit account information.');
-    }
-}
 
 function enableInputs(section) {
     let inputs = [];
