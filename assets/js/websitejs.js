@@ -105,69 +105,102 @@ $(document).ready(function() {
 });
 
 /*PREVIEW*/
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('medical-history-form');
-    const previewContainer = document.getElementById('preview-container');
-    const submitButton = document.getElementById('submit-button');
-    const editButton = document.getElementById('edit-button');
-    const finalSubmitButton = document.getElementById('final-submit-button');
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to populate preview based on form data
+    function populatePreview(formData) {
+        var previewHtml = '<div><strong>Full Name:</strong> ' + (formData.patientName || '') + '</div>';
+        previewHtml += '<div><strong>Birthday:</strong> ' + (formData.patientBday || '') + '</div>';
+        previewHtml += '<div><strong>Age:</strong> ' + (formData.patientAge || '') + '</div>';
+        previewHtml += '<div><strong>Sex:</strong> ' + (formData.patientSex || '') + '</div>';
+        previewHtml += '<div><strong>Religion:</strong> ' + (formData.patientRel || '') + '</div>';
+        previewHtml += '<div><strong>Marital Status:</strong> ' + (formData.patientMarStat || '') + '</div>';
+        previewHtml += '<div><strong>Occupation:</strong> ' + (formData.patientOccup || '') + '</div>';
+        previewHtml += '<div><strong>Phone Number:</strong> ' + (formData.patientPNum || '') + '</div>';
+        previewHtml += '<div><strong>Email Address:</strong> ' + (formData.patientEmail || '') + '</div>';
+        previewHtml += '<div><strong>Blood Type:</strong> ' + (formData.patientBType || '') + '</div>';
+        previewHtml += '<div><strong>Height:</strong> ' + (formData.patientHeight || '') + '</div>';
+        previewHtml += '<div><strong>Weight:</strong> ' + (formData.patientWeight || '') + '</div>';
+        previewHtml += '<div><strong>PCP\'s Name:</strong> ' + (formData.doctorPDoc || '') + '</div>';
+        previewHtml += '<div><strong>PCP\'s Phone Number:</strong> ' + (formData.doctorPNum || '') + '</div>';
+        previewHtml += '<div><strong>PCP\'s Email Address:</strong> ' + (formData.doctorPEmail || '') + '</div>';
 
-    submitButton.addEventListener('click', function (event) {
-        event.preventDefault();
-        populatePreview();
-        form.classList.add('hidden');
-        previewContainer.classList.remove('hidden');
-    });
+       // Append Medical Conditions
+       previewHtml += '<div class="mt-3"><strong>Medical Conditions:</strong></div>';
+       formData.conditionName.forEach(function(condition, index) {
+           previewHtml += '<div class="mt-2">';
+           previewHtml += '<strong>Condition Name:</strong> ' + condition + '<br>';
+           previewHtml += '<strong>Date of Diagnose:</strong> ' + formData.diagnoseDate[index] + '<br>';
+           previewHtml += '<strong>Medicine:</strong> ' + formData.med[index];
+           previewHtml += '</div>';
+       });
 
-    editButton.addEventListener('click', function () {
-        form.classList.remove('hidden');
-        previewContainer.classList.add('hidden');
-    });
-
-    finalSubmitButton.addEventListener('click', function () {
-        form.submit();
-    });
-
-    function populatePreview() {
-        document.getElementById('preview-full-name').textContent = document.getElementById('patientName').value;
-        document.getElementById('preview-birthday').textContent = document.getElementById('patientBday').value;
-        document.getElementById('preview-age').textContent = document.getElementById('patientAge').value;
-        document.getElementById('preview-sex').textContent = document.getElementById('patientSex').value;
-        document.getElementById('preview-religion').textContent = document.getElementById('patientRel').value;
-        document.getElementById('preview-marital-status').textContent = document.getElementById('patientMarStat').value;
-        document.getElementById('preview-occupation').textContent = document.getElementById('patientOccup').value;
-        document.getElementById('preview-phone-number').textContent = document.getElementById('patientPNum').value;
-        document.getElementById('preview-email').textContent = document.getElementById('patientEmail').value;
-        document.getElementById('preview-blood-type').textContent = document.getElementById('patientBType').value;
-        document.getElementById('preview-height').textContent = document.getElementById('patientHeight').value;
-        document.getElementById('preview-weight').textContent = document.getElementById('patientWeight').value;
-        document.getElementById('preview-pcp-name').textContent = document.getElementById('doctorPDoc').value;
-        document.getElementById('preview-pcp-phone').textContent = document.getElementById('doctorPNum').value;
-        document.getElementById('preview-pcp-email').textContent = document.getElementById('doctorPEmail').value;
-        document.getElementById('preview-condition-medications').textContent = document.getElementById('conditionMed').value;
-        document.getElementById('preview-allergies').textContent = document.getElementById('allergenName').value;
-        document.getElementById('preview-allergen-medications').textContent = document.getElementById('allergenMed').value;
-
-        const conditionsContainer = document.getElementById('conditions-container');
-        const previewConditions = document.getElementById('preview-conditions');
-        previewConditions.innerHTML = '';
-        const conditionItems = conditionsContainer.querySelectorAll('.condition-item');
-        conditionItems.forEach(function (item, index) {
-            const conditionName = item.querySelector('input[name="conditionName[]"]').value;
-            const diagnoseDate = item.querySelector('input[name="diagnoseDate[]"]').value;
-            previewConditions.innerHTML += `<p><strong>Condition ${index + 1}:</strong> ${conditionName} (Diagnosed: ${diagnoseDate})</p>`;
+        // Append Allergy Conditions
+        previewHtml += '<div class="mt-3"><strong>Allergy Conditions:</strong></div>';
+        formData.allergenName.forEach(function(allergy, index) {
+            previewHtml += '<div class="mt-2">';
+            previewHtml += '<strong>Allergy Name:</strong> ' + allergy + '<br>';
+            previewHtml += '<strong>Date of Diagnose:</strong> ' + formData.allergenDiagnoseDate[index] + '<br>';
+            previewHtml += '<strong>Medicine:</strong> ' + formData.allergyMed[index];
+            previewHtml += '</div>';
         });
 
-        const surgeriesContainer = document.getElementById('surgery-container');
-        const previewSurgeries = document.getElementById('preview-surgeries');
-        previewSurgeries.innerHTML = '';
-        const surgeryItems = surgeriesContainer.querySelectorAll('.surgery-item');
-        surgeryItems.forEach(function (item, index) {
-            const surgeryName = item.querySelector('input[name="surgeryName[]"]').value;
-            const surgeryLoc = item.querySelector('input[name="surgeryLoc[]"]').value;
-            const surgeryType = item.querySelector('input[name="surgeryType[]"]').value;
-            const surgeryYear = item.querySelector('input[name="surgeryYear[]"]').value;
-            previewSurgeries.innerHTML += `<p><strong>Surgery ${index + 1}:</strong> ${surgeryName} (Location: ${surgeryLoc}, Type: ${surgeryType}, Year: ${surgeryYear})</p>`;
+        // Append Surgery Details
+        previewHtml += '<div class="mt-3"><strong>Surgery Details:</strong></div>';
+        formData.surgeryName.forEach(function(surgery, index) {
+            previewHtml += '<div class="mt-2">';
+            previewHtml += '<strong>Surgery Name:</strong> ' + surgery + '<br>';
+            previewHtml += '<strong>Surgery Location:</strong> ' + formData.surgeryLoc[index] + '<br>';
+            previewHtml += '<strong>Type:</strong> ' + formData.surgeryType[index] + '<br>';
+            previewHtml += '<strong>Year Conducted:</strong> ' + formData.surgeryYear[index];
+            previewHtml += '</div>';
         });
+
+  
+        var previewModalContent = document.getElementById('modal-preview-content');
+        if (previewModalContent) {
+            previewModalContent.innerHTML = previewHtml;
+        } else {
+            console.error('Modal preview content element not found.');
+        }
     }
+
+    // Event listener for form submission
+    $('#medical-history-form').submit(function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Gather form data
+        var formData = {
+            patientName: $('#patientName').val(),
+            patientBday: $('#patientBday').val(),
+            patientAge: $('#patientAge').val(),
+            patientSex: $('#patientSex').val(),
+            patientRel: $('#patientRel').val(),
+            patientMarStat: $('#patientMarStat').val(),
+            patientOccup: $('#patientOccup').val(),
+            patientPNum: $('#patientPNum').val(),
+            patientEmail: $('#patientEmail').val(),
+            patientBType: $('#patientBType').val(),
+            patientHeight: $('#patientHeight').val(),
+            patientWeight: $('#patientWeight').val(),
+            doctorPDoc: $('#doctorPDoc').val(),
+            doctorPNum: $('#doctorPNum').val(),
+            doctorPEmail: $('#doctorPEmail').val(),
+            conditionName: $('[name="conditionName[]"]').map(function() { return $(this).val(); }).get(),
+            diagnoseDate: $('[name="diagnoseDate[]"]').map(function() { return $(this).val(); }).get(),
+            med: $('[name="med[]"]').map(function() { return $(this).val(); }).get(),
+            allergenName: $('[name="allergenName[]"]').map(function() { return $(this).val(); }).get(),
+            allergenDiagnoseDate: $('[name="allergenDiagnoseDate[]"]').map(function() { return $(this).val(); }).get(),
+            allergyMed: $('[name="allergyMed[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryName: $('[name="surgeryName[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryLoc: $('[name="surgeryLoc[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryType: $('[name="surgeryType[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryYear: $('[name="surgeryYear[]"]').map(function() { return $(this).val(); }).get()
+        };
+
+        
+        populatePreview(formData);
+
+        // Show the modal
+        $('#previewModal').modal('show');
+    });
 });
