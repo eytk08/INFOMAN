@@ -17,7 +17,7 @@
       <div class="container">
         <a class="navbar-brand" href="#land">
           <img href="home.html" class="logo2" src="assets\images\logo2.png" alt="">
-         </a>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -49,11 +49,42 @@
         </div>
       </div>
     </section>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="signUpModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mt-3">To proceed to the form, you need to sign up first, but you also need to finish your form to save your records.</p>
+            <form>
+              <div class="form-group required mb-3">
+                <label for="signUpEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="signUpEmail" placeholder="example@gmail.com">
+              </div>
+              <div class="form-group required mb-3">
+                <label for="signUpPassword" class="form-label">Password</label>
+                <input type="password" class="form-control required" id="signUpPassword">
+              </div>
+              <div class="form-group required mb-3">
+                <label for="confirmPassword" class="form-label required">Confirm Password</label>
+                <input type="password" class="form-control required" id="confirmPassword">
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-brand">Proceed</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
      <!--LOGIN-->
     <section id="Login"> 
       <div class="container container-fluid vh-100 d-flex justify-content-center align-items-center"">
-        <div class="row justify-content-center">
-        </div>
+        <div class="row justify-content-center"></div>
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="wrap d-md-flex">
@@ -92,10 +123,7 @@
       </div>
   </div>    
   </div>
-  
   </section>
-
- 
 
     <!-- About -->
     <section id="about" class="about-section" style="user-select: none;">
@@ -108,11 +136,6 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!--LOGIN-->
-    <section>
-
-
     </section>
 
     <!-- FAQ Section -->
