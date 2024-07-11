@@ -462,3 +462,23 @@ select.form-control {
     height: 30px; 
 }
 
+/*MODAL*/
+.modal-content {
+    background-color:var(--c-white); 
+    color: var(--c-dark); 
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    margin-right: 12px;
+    color: var(--c-brand-light);
+    background: var(--c-white);    
+
+}
+
+.modal-dialog.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - 3.5rem); 
+}
