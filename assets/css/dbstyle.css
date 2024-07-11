@@ -134,7 +134,7 @@ nav .fas{
 
 .main-forms .card{
     display: flex;
-    flex: 1 1 280px;
+    flex: 2;
     flex-direction: column;
     justify-content: space-between;
     justify-items: center;
@@ -142,7 +142,7 @@ nav .fas{
     position: flex; 
 
     height: auto;
-    width: 280px ;
+    width: 250px ;
   
     background: var(--c-white);
     text-align: center;
@@ -153,10 +153,6 @@ nav .fas{
 }
 
 
-.card .column {
-    display: flex;
-    flex-direction: column;
-}
 .main-forms .card:hover{
     box-shadow: var(--c-brand-light);
     transition: box-shadow 0.3s ease-in-out;
