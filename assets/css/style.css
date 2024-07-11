@@ -482,3 +482,7 @@ select.form-control {
     align-items: center;
     min-height: calc(100% - 3.5rem); 
 }
+
+.modal-footer #submit-button {
+  margin: 4px 4px 4px;
+}
