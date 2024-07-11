@@ -33,8 +33,6 @@ $(document).ready(function() {
             <div class="allergy-item form-group">
                 <label for="allergenName">Allergy Name</label>
                 <input type="text" class="form-control inptborder" name="allergenName[]">
-                <label for="diagnoseDate">Date of Diagnose</label>
-                <input type="date" class="form-control inptborder" name="allergenDiagnoseDate[]">
                 <label for="med">Medicine</label>
                 <input type="text" class="form-control inptborder" name="allergyMed[]">
                 <button type="button" class="btn btn-danger btn-sm delete-allergy">Delete</button>
