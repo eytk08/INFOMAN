@@ -157,9 +157,15 @@ nav .fas{
 
 
 .main-forms .card:hover{
-    box-shadow: var(--c-brand-light);
     transition: box-shadow 0.3s ease-in-out;
     box-shadow: 0 0 10px rgb(54, 196, 153);
+    color: var(--c-white);
+    background-color: var(--c-brand);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    
+}
+.main-forms .card:hover i {
+    color: var(--c-white); 
 }
 
 
@@ -226,7 +232,16 @@ nav .fas{
     background: var(--c-white);
     border-radius: 10px;
 }
-
+.conditions-box:hover, .allergies-box:hover, .surgeries-box:hover {
+    box-shadow: 0 0 10px rgb(54, 196, 153);
+    background-color: var(--c-brand);
+    color: var(--c-white);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.conditions-box:hover .btn, .allergies-box:hover .btn, .surgeries-box:hover .btn {
+    color: var(--c-dark);
+    background-color: var(--c-white);
+}
 table{
     padding: 10px;
 }
@@ -318,6 +333,12 @@ th, td{
     background-color: var(--c-white);
 
 }
+
+.mprofile:hover, .sprofile:hover {
+    box-shadow: 0 0 20px rgba(50, 226, 138, 0.774); 
+    transition: box-shadow 0.3s ease; 
+}
+
 .mprofile .btn-brand, .sprofile .btn-brand{
     margin: 20px;
 }
