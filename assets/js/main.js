@@ -9,21 +9,25 @@ document.querySelectorAll('a').forEach(link => {
 
     });
 });
-// Function to enable personal information inputs
-function enablePersonalInputs() {
-    const personalInputs = document.querySelectorAll('#mprofile input');
-    personalInputs.forEach(input => {
-        input.disabled = false;
-    });
-}
-
-
+// Function to enable inputs based on section
 function enableInputs(section) {
     let inputs = [];
     if (section === 'personal') {
         inputs = document.querySelectorAll('.mprofile input');
     } else if (section === 'account') {
-        inputs = document.querySelectorAll('.sprofile input');
+        // Retrieve current values before enabling inputs
+        const emailInput = document.getElementById('emailInput');
+        const phoneInput = document.getElementById('phoneInput');
+        const passwordInput = document.getElementById('passwordInput');
+
+        // Store current values as data attributes
+        emailInput.setAttribute('data-previous-value', emailInput.value);
+        phoneInput.setAttribute('data-previous-value', phoneInput.value);
+        passwordInput.setAttribute('data-previous-value', passwordInput.value);
+
+        // Enable all inputs in account section
+        inputs = document.querySelectorAll('.sprofile input, .sprofile button'); 
+
         // Also enable the password input separately
         document.getElementById('passwordInput').disabled = false;
     }
@@ -61,7 +65,7 @@ function askForCurrentPassword() {
 
 // Function to enable account edit mode
 function enableAccountEdit() {
-    const accountInputs = document.querySelectorAll('#sprofile input');
+    const accountInputs = document.querySelectorAll('.sprofile input');
     const newPasswordFields = document.getElementById('newPasswordFields');
     const saveButton = document.querySelector('.sprofile button:nth-of-type(2)'); // Selects the second button (Save)
 
@@ -88,7 +92,7 @@ function saveAccountChanges() {
     console.log('Saving account changes:', data);
 
     // Reset fields and disable inputs after saving
-    const accountInputs = document.querySelectorAll('#sprofile input');
+    const accountInputs = document.querySelectorAll('.sprofile input');
     accountInputs.forEach(input => {
         input.value = ''; // Clear input values
         input.disabled = true;
@@ -123,4 +127,42 @@ function saveData(section) {
 
     // Simulate API call or save to database
     console.log('Saving data:', data);
+}
+
+function askForCurrentPasswordd() {
+    const confirmDelete = confirm('Are you sure you want to delete your account? This action cannot be undone.');
+
+    if (confirmDelete) {
+        const currentPassword = prompt('Please enter your password to confirm account deletion:');
+        if (currentPassword) {
+            // Simulate checking current password (replace with actual validation)
+            const currentPasswordFromDatabase = "abc123"; // Replace with actual password fetched from database
+
+            if (currentPassword === currentPasswordFromDatabase) {
+                // Password is correct, proceed with deletion
+                deleteAccount();
+            } else {
+                // Incorrect password
+                alert('Incorrect password. Account deletion cancelled.');
+            }
+        } else {
+            // User cancelled password prompt
+            alert('Password is required to confirm account deletion.');
+        }
+    } else {
+        // User cancelled account deletion
+        console.log('Account deletion cancelled.');
+    }
+}
+
+// Function to delete account (simulated)
+function deleteAccount() {
+    // Simulate API call to delete account and associated records
+    console.log('Deleting account and associated records...');
+
+    // Simulated success message
+    alert('Account deleted successfully.');
+
+    // Optionally redirect or perform other actions after deletion
+    window.location.href = "home.html";// Redirect to homepage or another appropriate URL
 }
