@@ -96,7 +96,7 @@ $(document).ready(function() {
         if ($(window).scrollTop() > 300) {
             backToTop.fadeIn();
         } else {
-            ackToTop.fadeOut();
+            backToTop.fadeOut();
         }
     });
     backToTop.click(function(e) {
