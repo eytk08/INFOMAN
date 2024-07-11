@@ -272,3 +272,70 @@ th, td{
 .hidden {
     display: none;
 }
+
+/*SETTINGS*/
+.main-section{
+    box-sizing: border-box;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    flex: 2;
+}
+
+.profile h1.header{
+    font-size: 4vh;
+    margin: 20px;
+    padding: 10px;
+}
+ h1.header2{
+    font-size: 3vh;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+.content2{
+    min-height:  auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+
+.mprofile, .sprofile{
+    border-radius: 20px;
+    border: 2px solid var(--c-body);
+    padding: 150px;
+    background-color: var(--c-white);
+
+}
+.mprofile .btn-brand, .sprofile .btn-brand{
+    margin: 20px;
+}
+
+
+.mprofile h2, .sprofile h2 {
+    margin-top: 10px 0;
+    text-align: left; 
+
+}
+
+.input-container{
+    width: 100%;
+    gap: 2vh;
+    display: flex;
+    align-content: flex-start;
+    margin-bottom: 20px;
+}
+.input-container label{
+    text-align: left;
+}
+.input-container input{
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    width: 190px;
+    height: 30px;
+}
