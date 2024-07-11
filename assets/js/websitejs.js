@@ -84,7 +84,20 @@ $(document).ready(function() {
         addDeleteSurgeryEvent($(this));
     });
 
-// back2top
+    document.getElementById('patientBday').addEventListener('change', function() {
+        const birthdate = new Date(this.value);
+        const today = new Date();
+        let age = today.getFullYear() - birthdate.getFullYear();
+        const monthDifference = today.getMonth() - birthdate.getMonth();
+
+        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+          age--;
+        }
+
+        document.getElementById('patientAge').value = age;
+      });
+
+    // back2top
     var backToTop = $('#back2Top');
     $(window).scroll(function() {
         if ($(window).scrollTop() > 300) {
