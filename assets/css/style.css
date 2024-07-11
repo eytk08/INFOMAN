@@ -155,14 +155,27 @@ h5 {
     margin-top: 20px; 
     margin-bottom: 20px;
   }
-
+.about-image{
+    max-width: 50%;
+    height: auto;
+        border-radius: 5px;
+    
+}
 .about-section {
-    padding-top: 350px;        
+    padding-top: 100px;        
     height: 100vh;
-    text-align: left;
+    padding: 140px;
     background: linear-gradient(rgb(1, 10, 10), rgba(13, 187, 135, 0.199)), var(--c-dark) url('https://img.freepik.com/premium-photo/high-angle-view-eyeglasses-table-against-black-background_1048944-215100.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1717804800&semt=ais_user') no-repeat center/cover;
     background-size: cover;
     color: var(--c-white);
+    text-align: justify;
+}
+.col {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .FAQ-section {
