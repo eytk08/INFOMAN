@@ -10,9 +10,8 @@
 <body>
     <div class="container">
         <nav>
-            <ul>    
+            <ul>
                 <li>
-                    <!--NAVBAR-->
                     <a href="#" class="logo">
                         <img src="assets/images/logo2.png" alt="Logo"> 
                         <span class="nav-item"></span>
@@ -20,35 +19,40 @@
                 </li>
                 <li class="active">
                     <a href="#"><i class="fas fa-tachometer-alt"></i> 
-                    <span class="nav-item"></span>Dashboard</a>
+                        <span class="nav-item">Dashboard</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-file-alt"></i> 
-                        <span class="nav-item"></span>Form</a>
+                        <span class="nav-item">Form</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-table"></i>
-                        <span class="nav-item"></span> Tables</a>
+                        <span class="nav-item">Tables</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-cog"></i>
-                        <span class="nav-item"></span> Settings</a>
+                        <span class="nav-item">Settings</span>
+                    </a>
                 </li>
                 <li>
                     <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i>
-                        <span class="nav-item"></span> Logout</a>
+                        <span class="nav-item">Logout</span>
+                    </a>
                 </li>
             </ul>
         </nav>
 
         <section class="main">
             <div class="main-top">
-                <h1>HELLO, </h1>
+                <h1>HELLO,</h1>
             </div>
             <div class="main-forms">
                 <div class="card">
                     <i class="fa-solid fa-id-card-clip"></i>                 
-                    <h1>100898</h1>
+                    <h1 class="patientid">100898</h1>
                     <h2>Patient ID</h2>
                 </div>
                 <div class="card">
@@ -60,15 +64,22 @@
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-droplet"></i>
-                    <h1>O+</h1>
+                    <h1 class="blood">O+</h1>
                     <h2>BLOOD TYPE</h2>
                 </div>
                 <div class="card">
-                    <i class="fa-solid fa-ruler-vertical"></i>
-                    <h3>Height</h3>
-                    <i class="fa-solid fa-weight-scale"></i>
-                    <h1></h1>
-                    <h3>Weight</h3>
+                    <div class="column">
+                        <div class="icons">
+                            <i class="fa-solid fa-ruler-vertical"></i>
+                            <i class="fa-solid fa-weight-scale"></i>
+                        </div>
+                        <div class="context">
+                        <h1 class="hw">6'3</h1>
+                        <h3>Height</h3>
+                        <h1 class="hw">49kg</h1>
+                        <h3>Weight</h3>
+                        </div>
+                    </div>
                     <h2>MEASUREMENTS</h2>
                 </div>
             </div>
@@ -84,6 +95,24 @@
                                     <th>Diagnosis Date</th>
                                     <th>Medications</th>
                                     <th>Option</th>
+                                </tr>
+                                <tr>
+                                    <td>Asthma</td>
+                                    <td>2022-01-23</td>
+                                    <td>Albuterol</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Asthma</td>
+                                    <td>2022-01-23</td>
+                                    <td>Albuterol</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Asthma</td>
+                                    <td>2022-01-23</td>
+                                    <td>Albuterol</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
                                 </tr>
                                 <tr>
                                     <td>Asthma</td>
@@ -114,6 +143,7 @@
                         <a href="#" class="btn btn-brand btn-add">Add Record</a>
                     </div>
                 </section>
+            </div>
                 <section class="surgeries">
                     <h1>Surgeries</h1>
                     <div class="surgeries-box">
@@ -133,12 +163,32 @@
                                     <td>2019</td>
                                     <td><a href="#" class="btn btn-brand">Delete</a></td>
                                 </tr>
+                                <tr>
+                                    <td>Appendectomy</td>
+                                    <td>Abdomen</td>
+                                    <td>Emergency</td>
+                                    <td>2019</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Appendectomy</td>
+                                    <td>Abdomen</td>
+                                    <td>Emergency</td>
+                                    <td>2019</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Appendectomy</td>
+                                    <td>Abdomen</td>
+                                    <td>Emergency</td>
+                                    <td>2019</td>
+                                    <td><a href="#" class="btn btn-brand">Delete</a></td>
+                                </tr>
                             </table>
                         </div>
                         <a href="#" class="btn btn-brand btn-add">Add Record</a>
                     </div>
                 </section>
-            </div>
         </section>
     </div>
 
