@@ -48,105 +48,105 @@
                         <input type="text" class="form-control inptborder" id="patientName" required>
                     </div>
                     <div class="form-group required">
-			<div class="d-flex align-items-end">
-			     <div style="flex: 1;">
-				  <label for="patientBday">Birthday</label>
-				  <input type="date" class="form-control inptborder" id="patientBday" required>
-			     </div>
-			     <div style="flex: 1; margin-left: 10px;">
-				  <label for="patientAge">Age</label>
-				  <input type="number" class="form-control inptborder" id="patientAge" required>
-			     </div>
-			     <div style="flex: 1; margin-left: 10px;">
-				  <label for="patientSex">Sex</label>
-				  <select class="form-control inptborder" id="patientSex" required>
-					<option value="" disabled selected>Select</option>
-					<option value="M">Male</option>
-					<option value="F">Female</option>
-				  </select>
-			     </div>
-			</div>
-		    </div>
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientBday">Birthday</label>
+						<input type="date" class="form-control inptborder" id="patientBday" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientAge">Age</label>
+						<input type="number" class="form-control inptborder" id="patientAge" disabled required readonly>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientSex">Sex</label>
+						<select class="form-control inptborder" id="patientSex" required>
+							<option value="" disabled selected>Select</option>
+							<option value="M">Male</option>
+							<option value="F">Female</option>
+						</select>
+						</div>
+					</div>
+					</div>
                     <div class="form-group required">
-			<div class="d-flex align-items-end">
-			     <div style="flex: 1;">
-				 <label for="patientRel">Religion</label>
-				 <input type="text" class="form-control inptborder" id="patientRel" required>
-			     </div>
-			     <div style="flex: 1; margin-left: 10px;">
-				 <label for="patientMarStat">Marital Status</label>
-				 <select class="form-control inptborder" id="patientMarStat" required>
-					 <option value="" disabled selected>Select</option>
-					 <option value="divorced">Divorced</option>
-					 <option value="married">Married</option>
-					 <option value="separated">Separated</option>
-					 <option value="single">Single</option>
-					 <option value="widowed">Widowed</option>
-				 </select>
-			     </div>
-			     <div style="flex: 1; margin-left: 10px;">
-				 <label for="patientOccup">Occupation</label>
-				 <input type="text" class="form-control inptborder" id="patientOccup" required>
-			     </div>
-			 </div>
-		    </div>
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientRel">Religion</label>
+						<input type="text" class="form-control inptborder" id="patientRel" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientMarStat">Marital Status</label>
+						<select class="form-control inptborder" id="patientMarStat" required>
+							<option value="" disabled selected>Select</option>
+							<option value="divorced">Divorced</option>
+							<option value="married">Married</option>
+							<option value="separated">Separated</option>
+							<option value="single">Single</option>
+							<option value="widowed">Widowed</option>
+						</select>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientOccup">Occupation</label>
+						<input type="text" class="form-control inptborder" id="patientOccup" required>
+						</div>
+					</div>
+					</div>
                     <div class="form-group required">
-			 <div class="d-flex align-items-end">
-			      <div style="flex: 1;">
-				   <label for="patientPNum">Phone Number</label>
-				   <input type="tel" class="form-control inptborder" id="patientPNum" required>
-			      </div>
-			      <div style="flex: 1; margin-left: 10px;">
-				   <label for="patientEmail">Email Address</label>
-				   <input type="email" class="form-control inptborder" id="patientEmail" required disabled>
-			      </div>
-			 </div>
-		    </div>
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientPNum">Phone Number</label>
+						<input type="tel" class="form-control inptborder" id="patientPNum" required>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientEmail">Email Address</label>
+						<input type="email" class="form-control inptborder" id="patientEmail" disabled required readonly>
+						</div>
+					</div>
+					</div>
                     
                     <!-- Medical Details Section -->
                     <h4 class="mt-4">Medical Details</h4>
-		    <div class="form-group required">
-			 <div class="d-flex align-items-end">
-			      <div style="flex: 1;">
-				   <label for="patientBType">Blood Type</label>
-					<select class="form-control inptborder" id="patientBType" required>
-					<option value="" disabled selected>Select</option>
-					<option value="O-">O-</option>
-					<option value="O+">O+</option>
-					<option value="A-">A-</option>
-					<option value="A+">A+</option>
-					<option value="B-">B-</option>
-					<option value="B+">B+</option>
-					<option value="AB-">AB-</option>
-					<option value="AB+">AB+</option>
-				   </select>
-			      </div>
-			      <div style="flex: 1; margin-left: 10px;">
-				   <label for="patientHeight">Height</label>
-				   <input type="number" class="form-control inptborder" id="patientHeight">
-			      </div>
-			      <div style="flex: 1; margin-left: 10px;">
-				   <label for="patientWeight">Weight</label>
-				   <input type="number" step="0.01" class="form-control inptborder" id="patientWeight" required>
-			      </div>
-			 </div>
-		    </div>
+					<div class="form-group required">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="patientBType">Blood Type</label>
+							<select class="form-control inptborder" id="patientBType" required>
+							<option value="" disabled selected>Select</option>
+							<option value="O-">O-</option>
+							<option value="O+">O+</option>
+							<option value="A-">A-</option>
+							<option value="A+">A+</option>
+							<option value="B-">B-</option>
+							<option value="B+">B+</option>
+							<option value="AB-">AB-</option>
+							<option value="AB+">AB+</option>
+						</select>
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientHeight">Height (inches)</label>
+						<input type="number" class="form-control inptborder" id="patientHeight">
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="patientWeight">Weight (kg)</label>
+						<input type="number" step="0.01" class="form-control inptborder" id="patientWeight" required>
+						</div>
+					</div>
+					</div>
                     <div class="form-group">
                         <label for="doctorPDoc">PCP's Name </label>
                         <input type="text" class="form-control inptborder" id="doctorPDoc">
                     </div>
-		    <div class="form-group">
-			 <div class="d-flex align-items-end">
-			      <div style="flex: 1;">
-				   <label for="doctorPNum">PCP's Phone Number </label>
-				   <input type="tel" class="form-control inptborder" id="doctorPNum">
-			      </div>
-			      <div style="flex: 1; margin-left: 10px;">
-				   <label for="doctorPEmail">PCP's Email Address </label>
-			      <input type="email" class="form-control inptborder" id="doctorPEmail" placeholder="example@gmail.com">
-			      </div>
-			 </div>
-		    </div>
+					<div class="form-group">
+					<div class="d-flex align-items-end">
+						<div style="flex: 1;">
+						<label for="doctorPNum">PCP's Phone Number </label>
+						<input type="tel" class="form-control inptborder" id="doctorPNum">
+						</div>
+						<div style="flex: 1; margin-left: 10px;">
+						<label for="doctorPEmail">PCP's Email Address </label>
+						<input type="email" class="form-control inptborder" id="doctorPEmail" placeholder="example@gmail.com">
+						</div>
+					</div>
+					</div>
                     <div id="conditions-container">
                         <h4 class="mt-4">Medical Conditions</h4>
                         <div class="condition-item form-group">
@@ -161,50 +161,45 @@
                     </div>
                     <button type="button" id="add-condition" class="btn btn-outline-primary mt-3">Add Another Condition</button>
 					
-		    <!-- Allergy Details Section -->
-		    <div id="allergy-container">
-				<h4 class="mt-4">Allergy Conditions</h4>
-				<div class="allergy-item form-group">
-					<label for="allergenName">Allergy Name</label>
-                	<input type="text" class="form-control inptborder" name="allergenName[]">
-					<label for="allergyMed">Medicine</label>
-                	<input type="text" class="form-control inptborder" name="allergyMed[]">
-                	<button type="button" class="btn btn-danger btn-sm delete-allergy">Delete</button>
-				</div>
-		    </div>
-            <button type="button" id="add-allergy" class="btn btn-outline-primary mt-3">Add Another Allergy</button>
+					<!-- Allergy Details Section -->
+					<div id="allergy-container">
+						<h4 class="mt-4">Allergy Conditions</h4>
+						<div class="allergy-item form-group">
+							<label for="allergenName">Allergy Name</label>
+							<input type="text" class="form-control inptborder" name="allergenName[]">
+							<label for="allergyMed">Medicine</label>
+							<input type="text" class="form-control inptborder" name="allergyMed[]">
+							<button type="button" class="btn btn-danger btn-sm delete-allergy">Delete</button>
+						</div>
+					</div>
+					<button type="button" id="add-allergy" class="btn btn-outline-primary mt-3">Add Another Allergy</button>
 
-		    <!-- Surgery Details Section -->
-		    <div id="surgery-container">
-			<h4 class="mt-4">Surgery Details</h4>
-			<div class="surgery-item form-group">
-				<label for="surgeryName">Surgery Name</label>
-				<input type="text" class="form-control inptborder" name="surgeryName[]">
-				<div class="d-flex align-items-end">
-					<div style="flex: 1;">
+					<!-- Surgery Details Section -->
+					<div id="surgery-container">
+					<h4 class="mt-4">Surgery Details</h4>
+					<div class="surgery-item form-group">
 						<label for="surgeryLoc">Surgery Location</label>
 						<input type="text" class="form-control inptborder" name="surgeryLoc[]">
+						<div class="d-flex align-items-end">
+							<div style="flex: 1;">
+								<label for="surgeryType">Type</label>
+								<input type="text" class="form-control inptborder" name="surgeryType[]">
+							</div>
+							<div style="flex: 1; margin-left: 10px;">
+								<label for="surgeryDate">Date Conducted</label>
+								<input type="date" class="form-control inptborder" name="surgeryDate[]">
+							</div>
+							<button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+						</div>
 					</div>
-					<div style="flex: 1; margin-left: 10px;">
-						<label for="surgeryType">Type</label>
-						<input type="text" class="form-control inptborder" name="surgeryType[]">
 					</div>
-					<div style="flex: 1; margin-left: 10px;">
-						<label for="surgeryYear">Year Conducted</label>
-						<input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
-					</div>
-					<button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+					<button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>
+					<button type="submit" id="submit-button" class="btn btn-solid btn-block">Preview</button>
+				</form>
+					<div id="form-result" class="mt-4"></div>
 				</div>
 			</div>
-		    </div>
-		    <button type="button" id="add-surgery" class="btn btn-outline-primary mt-3">Add Another Surgery</button>
-					
-                    <button type="submit" id="submit-button" class="btn btn-solid btn-block">Preview</button>
-                </form>
-                <div id="form-result" class="mt-4"></div>
-            </div>
-        </div>
-    </div>
+		</div>
 	
 <!-- Preview Section -->
 <div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="previewModalLabel" aria-hidden="true">

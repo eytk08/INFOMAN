@@ -56,24 +56,20 @@ $(document).ready(function() {
         const container = $('#surgery-container');
         const newSurgery = $(`
             <div class="surgery-item form-group">
-                <label for="surgeryName">Surgery Name</label>
-                <input type="text" class="form-control inptborder" name="surgeryName[]">
-                <div class="d-flex align-items-end">
-                    <div style="flex: 1;">
-                        <label for="surgeryLoc">Surgery Location</label>
-                        <input type="text" class="form-control inptborder" name="surgeryLoc[]">
-                    </div>
-                    <div style="flex: 1; margin-left: 10px;">
-                        <label for="surgeryType">Type</label>
-                        <input type="text" class="form-control inptborder" name="surgeryType[]">
-                    </div>
-                    <div style="flex: 1; margin-left: 10px;">
-                        <label for="surgeryYear">Year Conducted</label>
-                        <input type="number" class="form-control inptborder" name="surgeryYear[]" min="1900" max="2100">
-                    </div>
-                    <button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
-                </div>
-            </div>`);
+						<label for="surgeryLoc">Surgery Location</label>
+						<input type="text" class="form-control inptborder" name="surgeryLoc[]">
+						<div class="d-flex align-items-end">
+							<div style="flex: 1;">
+								<label for="surgeryType">Type</label>
+								<input type="text" class="form-control inptborder" name="surgeryType[]">
+							</div>
+							<div style="flex: 1; margin-left: 10px;">
+								<label for="surgeryDate">Date Conducted</label>
+								<input type="date" class="form-control inptborder" name="surgeryYear[]">
+							</div>
+							<button type="button" class="btn btn-danger btn-sm delete-surgery">Delete</button>
+						</div>
+					</div>`);
         container.append(newSurgery);
         addDeleteSurgeryEvent(newSurgery.find('.delete-surgery'));
     });
@@ -88,7 +84,20 @@ $(document).ready(function() {
         addDeleteSurgeryEvent($(this));
     });
 
-// back2top
+    document.getElementById('patientBday').addEventListener('change', function() {
+        const birthdate = new Date(this.value);
+        const today = new Date();
+        let age = today.getFullYear() - birthdate.getFullYear();
+        const monthDifference = today.getMonth() - birthdate.getMonth();
+
+        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
+          age--;
+        }
+
+        document.getElementById('patientAge').value = age;
+      });
+
+    // back2top
     var backToTop = $('#back2Top');
     $(window).scroll(function() {
         if ($(window).scrollTop() > 300) {
@@ -118,8 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
         previewHtml += '<div><strong>Phone Number:</strong> ' + (formData.patientPNum || '') + '</div>';
         previewHtml += '<div><strong>Email Address:</strong> ' + (formData.patientEmail || '') + '</div>';
         previewHtml += '<div><strong>Blood Type:</strong> ' + (formData.patientBType || '') + '</div>';
-        previewHtml += '<div><strong>Height:</strong> ' + (formData.patientHeight || '') + '</div>';
-        previewHtml += '<div><strong>Weight:</strong> ' + (formData.patientWeight || '') + '</div>';
+        previewHtml += '<div><strong>Height (inches):</strong> ' + (formData.patientHeight || '') + '</div>';
+        previewHtml += '<div><strong>Weight (kg):</strong> ' + (formData.patientWeight || '') + '</div>';
         previewHtml += '<div><strong>PCP\'s Name:</strong> ' + (formData.doctorPDoc || '') + '</div>';
         previewHtml += '<div><strong>PCP\'s Phone Number:</strong> ' + (formData.doctorPNum || '') + '</div>';
         previewHtml += '<div><strong>PCP\'s Email Address:</strong> ' + (formData.doctorPEmail || '') + '</div>';
@@ -139,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function() {
         formData.allergenName.forEach(function(allergy, index) {
             previewHtml += '<div class="mt-2">';
             previewHtml += '<strong>Allergy Name:</strong> ' + allergy + '<br>';
-            previewHtml += '<strong>Date of Diagnose:</strong> ' + formData.allergenDiagnoseDate[index] + '<br>';
             previewHtml += '<strong>Medicine:</strong> ' + formData.allergyMed[index];
             previewHtml += '</div>';
         });
@@ -148,10 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
         previewHtml += '<div class="mt-3"><strong>Surgery Details:</strong></div>';
         formData.surgeryName.forEach(function(surgery, index) {
             previewHtml += '<div class="mt-2">';
-            previewHtml += '<strong>Surgery Name:</strong> ' + surgery + '<br>';
             previewHtml += '<strong>Surgery Location:</strong> ' + formData.surgeryLoc[index] + '<br>';
             previewHtml += '<strong>Type:</strong> ' + formData.surgeryType[index] + '<br>';
-            previewHtml += '<strong>Year Conducted:</strong> ' + formData.surgeryYear[index];
+            previewHtml += '<strong>Date Conducted:</strong> ' + formData.surgeryDate[index];
             previewHtml += '</div>';
         });
 
