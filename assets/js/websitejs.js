@@ -126,6 +126,38 @@ document.addEventListener('DOMContentLoaded', function() {
         previewHtml += '<div><strong>PCP\'s Phone Number:</strong> ' + (formData.doctorPNum || '') + '</div>';
         previewHtml += '<div><strong>PCP\'s Email Address:</strong> ' + (formData.doctorPEmail || '') + '</div>';
 
+       // Append Medical Conditions
+       previewHtml += '<div class="mt-3"><strong>Medical Conditions:</strong></div>';
+       formData.conditionName.forEach(function(condition, index) {
+           previewHtml += '<div class="mt-2">';
+           previewHtml += '<strong>Condition Name:</strong> ' + condition + '<br>';
+           previewHtml += '<strong>Date of Diagnose:</strong> ' + formData.diagnoseDate[index] + '<br>';
+           previewHtml += '<strong>Medicine:</strong> ' + formData.med[index];
+           previewHtml += '</div>';
+       });
+
+        // Append Allergy Conditions
+        previewHtml += '<div class="mt-3"><strong>Allergy Conditions:</strong></div>';
+        formData.allergenName.forEach(function(allergy, index) {
+            previewHtml += '<div class="mt-2">';
+            previewHtml += '<strong>Allergy Name:</strong> ' + allergy + '<br>';
+            previewHtml += '<strong>Date of Diagnose:</strong> ' + formData.allergenDiagnoseDate[index] + '<br>';
+            previewHtml += '<strong>Medicine:</strong> ' + formData.allergyMed[index];
+            previewHtml += '</div>';
+        });
+
+        // Append Surgery Details
+        previewHtml += '<div class="mt-3"><strong>Surgery Details:</strong></div>';
+        formData.surgeryName.forEach(function(surgery, index) {
+            previewHtml += '<div class="mt-2">';
+            previewHtml += '<strong>Surgery Name:</strong> ' + surgery + '<br>';
+            previewHtml += '<strong>Surgery Location:</strong> ' + formData.surgeryLoc[index] + '<br>';
+            previewHtml += '<strong>Type:</strong> ' + formData.surgeryType[index] + '<br>';
+            previewHtml += '<strong>Year Conducted:</strong> ' + formData.surgeryYear[index];
+            previewHtml += '</div>';
+        });
+
+  
         var previewModalContent = document.getElementById('modal-preview-content');
         if (previewModalContent) {
             previewModalContent.innerHTML = previewHtml;
@@ -154,7 +186,17 @@ document.addEventListener('DOMContentLoaded', function() {
             patientWeight: $('#patientWeight').val(),
             doctorPDoc: $('#doctorPDoc').val(),
             doctorPNum: $('#doctorPNum').val(),
-            doctorPEmail: $('#doctorPEmail').val()
+            doctorPEmail: $('#doctorPEmail').val(),
+            conditionName: $('[name="conditionName[]"]').map(function() { return $(this).val(); }).get(),
+            diagnoseDate: $('[name="diagnoseDate[]"]').map(function() { return $(this).val(); }).get(),
+            med: $('[name="med[]"]').map(function() { return $(this).val(); }).get(),
+            allergenName: $('[name="allergenName[]"]').map(function() { return $(this).val(); }).get(),
+            allergenDiagnoseDate: $('[name="allergenDiagnoseDate[]"]').map(function() { return $(this).val(); }).get(),
+            allergyMed: $('[name="allergyMed[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryName: $('[name="surgeryName[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryLoc: $('[name="surgeryLoc[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryType: $('[name="surgeryType[]"]').map(function() { return $(this).val(); }).get(),
+            surgeryYear: $('[name="surgeryYear[]"]').map(function() { return $(this).val(); }).get()
         };
 
         
