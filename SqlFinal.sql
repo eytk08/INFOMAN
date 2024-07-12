@@ -66,7 +66,7 @@ Group by D.doctorPDoc
 Having WeightAVG > 65;
 
 -- 10, Difficult -- 
-Select D.doctorPDoc, Floor(AVG(patientAge)) as ageAVG
+Select D.doctorPDoc, AVG(patientAge) as ageAVG
 From patient as P, Doctor as D, infoman.condition as C, allergy as A 
 Where (P.fk_doctor_ID = D.Doctor_ID) AND (P.patient_ID = C.fk_condition_patient_ID) AND (P.patient_ID = A.fk_allergy_patient_ID) AND (C.conditionName LIKE '%Diabetes%' OR A.allergenName IN ('Peanuts', 'Mollusks'))
 Group by D.doctorPDoc
