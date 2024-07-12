@@ -55,7 +55,7 @@ CREATE TABLE `condition` (
   `condition_Code` char(4) NOT NULL, 
   `fk_condition_patient_ID` int NOT NULL,  
   `conditionName` varchar(50) DEFAULT NULL,
-  `conditionDiagnosis` date DEFAULT NULL,
+  `conditionDiagnosis` date NOT NULL,
   `conditionMed` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`condition_Code`,`fk_condition_patient_ID`,`conditionDiagnosis`),
   KEY `fk_patient_ID_idx` (`fk_condition_patient_ID`),
