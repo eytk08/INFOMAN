@@ -9,7 +9,7 @@ Select * From surgery;
 Update patient set patientAge = timestampdiff(Year,patientBday, curdate());
 
 -- Select Commands --
--- 1, Simple  -- 
+-- 1, Difficult  -- 
 Select * 
 From patient as P, doctor as D, allergy as A, Surgery as S
 Where (P.fk_doctor_ID = D.doctor_ID) AND (P.patient_ID = A.fk_allergy_patient_ID) AND (P.patient_ID = S.fk_surgery_patient_ID);
