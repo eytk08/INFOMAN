@@ -149,7 +149,7 @@ CREATE TABLE `surgery` (
   `fk_surgery_patient_ID` int NOT NULL,
   `surgeryLoc` varchar(30) DEFAULT NULL,
   `surgeryName` varchar(40) DEFAULT NULL,
-  `surgeryDate` date DEFAULT NULL,
+  `surgeryDate` date NOT NULL,
   PRIMARY KEY (`surgery_Code`,`fk_surgery_patient_ID`,`surgeryDate`),
   KEY `fk_surgery_patient_ID_idx` (`fk_surgery_patient_ID`),
   CONSTRAINT `fk_surgery_patient_ID` FOREIGN KEY (`fk_surgery_patient_ID`) REFERENCES `patient` (`patient_ID`)
