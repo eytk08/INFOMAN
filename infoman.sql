@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `allergy`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `allergy` (
-  `allergen_Code` int NOT NULL AUTO_INCREMENT, -- check nalang if yan or yung char(4) NOT NULL based sa masterlist sa excel na napagusapan -- 
+  `allergen_Code` char(4) NOT NULL, 
   `fk_allergy_patient_ID` int NOT NULL, 
   `allergenName` varchar(30) DEFAULT NULL,
   `allergenMed` varchar(30) DEFAULT NULL,
@@ -52,12 +52,12 @@ DROP TABLE IF EXISTS `condition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `condition` (
-  `condition_ID` char(4) NOT NULL, -- not really sure kung char 4 pa ba or set ko same sa surgery_code na datatype and size since may napaguaspan abt sa masterlist -- 
+  `condition_Code` char(4) NOT NULL, 
   `fk_condition_patient_ID` int NOT NULL,  
   `conditionName` varchar(50) DEFAULT NULL,
   `conditionDiagnosis` date DEFAULT NULL,
   `conditionMed` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`condition_ID`,`fk_condition_patient_ID`),
+  PRIMARY KEY (`condition_Code`,`fk_condition_patient_ID`),
   KEY `fk_patient_ID_idx` (`fk_condition_patient_ID`),
   CONSTRAINT `fk_condition_patient_ID` FOREIGN KEY (`fk_condition_patient_ID`) REFERENCES `patient` (`patient_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE `doctor` (
   `doctor_ID` int NOT NULL AUTO_INCREMENT, 
   `doctorPDoc` varchar(40) DEFAULT NULL,
-  `doctorPNum` varchar(11) DEFAULT NULL, -- Format nalang kaagad na +63 sa frontend para ang ilalagay nalang sa start ay either 09 or 9 nalang  
+  `doctorPNum` varchar(10) DEFAULT NULL,  
   `doctorPEmail` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`doctor_ID`),
   UNIQUE KEY `doctorPEmail_UNIQUE` (`doctorPEmail`)
@@ -109,14 +109,14 @@ CREATE TABLE `patient` (
   `patient_ID` int NOT NULL AUTO_INCREMENT, -- dunno if (1,2,3,4,5,6 (Increment)) or sundin yung (104523) which will become char(6) NOT NULL -- 
   `patientName` varchar(60) NOT NULL,
   `patientAge` int NOT NULL,
-  `patientSex` enum('Male','Female','M','F') NOT NULL, -- not sure dito di namin magawa ng char nag iisip pa if m,f or male female --
+  `patientSex` enum('M','F') NOT NULL, -- not sure dito di namin magawa ng char nag iisip pa if m,f or male female --
   `patientBday` date NOT NULL, 
   `patientRel` varchar(30) NOT NULL, 
-  `patientMarStat` varchar(30) NOT NULL, -- not sure rin dito pwede ito gawing enum('Single','Married','Widowed,'Separated')
-  `patientBType` enum('A+','A-','B+','B-','AB+','AB-','O+','O-') DEFAULT NULL,
-  `patientHeight` decimal(3,2) NOT NULL, -- decimal siguro ito 
-  `patientWeight` decimal(3,2) NOT NULL, -- decimal siguro ito para precise and exact 
-  `patientPNum` varchar(11) NOT NULL, -- Format nalang kaagad na +63 sa frontend para ang ilalagay nalang sa start ay either 09 or 9 nalang  
+  `patientMarStat` varchar(30) NOT NULL, -- Can be set as enum()-- 
+  `patientBType` enum('A+','A-','B+','B-','AB+','AB-','O+','O-','Unkown' ) DEFAULT NULL,
+  `patientHeight` decimal(3,2) NOT NULL,  
+  `patientWeight` decimal(3,2) NOT NULL,
+  `patientPNum` varchar(10) NOT NULL,  
   `patientEmail` varchar(40) NOT NULL, 
   `patientOccup` varchar(30) NOT NULL,
   `fk_doctor_ID` int DEFAULT NULL,
@@ -145,7 +145,7 @@ DROP TABLE IF EXISTS `surgery`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `surgery` (
-  `surgery_Code` int NOT NULL AUTO_INCREMENT, 
+  `surgery_Code`  char(4) NOT NULL, 
   `fk_surgery_patient_ID` int NOT NULL,
   `surgeryLoc` varchar(30) DEFAULT NULL,
   `surgeryType` varchar(20) DEFAULT NULL,
