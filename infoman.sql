@@ -109,7 +109,7 @@ CREATE TABLE `patient` (
   `patient_ID` int NOT NULL AUTO_INCREMENT, -- dunno if (1,2,3,4,5,6 (Increment)) or sundin yung (104523) which will become char(6) NOT NULL -- 
   `patientName` varchar(60) NOT NULL,
   `patientAge` int NOT NULL,
-  `patientSex` enum('M','F') NOT NULL, -- not sure dito di namin magawa ng char nag iisip pa if m,f or male female --
+  `patientSex` char(1) NOT NULL, -- not sure dito di namin magawa ng char nag iisip pa if m,f or male female --
   `patientBday` date NOT NULL, 
   `patientRel` varchar(30) NOT NULL, 
   `patientMarStat` varchar(30) NOT NULL, -- Can be set as enum()-- 
