@@ -148,9 +148,9 @@ CREATE TABLE `surgery` (
   `surgery_Code`  char(4) NOT NULL, 
   `fk_surgery_patient_ID` int NOT NULL,
   `surgeryLoc` varchar(30) DEFAULT NULL,
-  `surgeryType` varchar(20) DEFAULT NULL,
-  `surgeryYear` date DEFAULT NULL,
-  PRIMARY KEY (`surgery_Code`,`fk_surgery_patient_ID`),
+  `surgeryName` varchar(40) DEFAULT NULL,
+  `surgeryDate` date DEFAULT NULL,
+  PRIMARY KEY (`surgery_Code`,`fk_surgery_patient_ID`, `surgeryDate`),
   KEY `fk_surgery_patient_ID_idx` (`fk_surgery_patient_ID`),
   CONSTRAINT `fk_surgery_patient_ID` FOREIGN KEY (`fk_surgery_patient_ID`) REFERENCES `patient` (`patient_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
