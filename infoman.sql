@@ -57,7 +57,7 @@ CREATE TABLE `condition` (
   `conditionName` varchar(50) DEFAULT NULL,
   `conditionDiagnosis` date DEFAULT NULL,
   `conditionMed` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`condition_Code`,`fk_condition_patient_ID`),
+  PRIMARY KEY (`condition_Code`,`fk_condition_patient_ID`,`conditionDiagnosis`),
   KEY `fk_patient_ID_idx` (`fk_condition_patient_ID`),
   CONSTRAINT `fk_condition_patient_ID` FOREIGN KEY (`fk_condition_patient_ID`) REFERENCES `patient` (`patient_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -106,10 +106,10 @@ DROP TABLE IF EXISTS `patient`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `patient` (
-  `patient_ID` int NOT NULL AUTO_INCREMENT, -- dunno if (1,2,3,4,5,6 (Increment)) or sundin yung (104523) which will become char(6) NOT NULL -- 
+  `patient_ID` int NOT NULL AUTO_INCREMENT, 
   `patientName` varchar(60) NOT NULL,
   `patientAge` int NOT NULL,
-  `patientSex` char(1) NOT NULL, -- not sure dito di namin magawa ng char nag iisip pa if m,f or male female --
+  `patientSex` char(1) NOT NULL, 
   `patientBday` date NOT NULL, 
   `patientRel` varchar(30) NOT NULL, 
   `patientMarStat` varchar(30) NOT NULL, -- Can be set as enum()-- 
@@ -150,7 +150,7 @@ CREATE TABLE `surgery` (
   `surgeryLoc` varchar(30) DEFAULT NULL,
   `surgeryName` varchar(40) DEFAULT NULL,
   `surgeryDate` date DEFAULT NULL,
-  PRIMARY KEY (`surgery_Code`,`fk_surgery_patient_ID`, `surgeryDate`),
+  PRIMARY KEY (`surgery_Code`,`fk_surgery_patient_ID`,`surgeryDate`),
   KEY `fk_surgery_patient_ID_idx` (`fk_surgery_patient_ID`),
   CONSTRAINT `fk_surgery_patient_ID` FOREIGN KEY (`fk_surgery_patient_ID`) REFERENCES `patient` (`patient_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
